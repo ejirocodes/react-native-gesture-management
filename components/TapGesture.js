@@ -1,5 +1,5 @@
-import React, { Component, useRef, useState } from 'react';
-import { View, Animated, StyleSheet } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
 
 export default function TapGesture() {
@@ -11,12 +11,16 @@ export default function TapGesture() {
     if (event.nativeEvent.state === State.ACTIVE) {
       alert('Hey single');
       console.log(likeColour);
+      console.log('single tap', doubleTapRef);
     }
   };
 
   const onDoubleTapEvent = (event) => {
     if (event.nativeEvent.state === State.ACTIVE) {
-      setLikeColour('red');
+      likeColour === '#28b5b5'
+        ? setLikeColour('red')
+        : setLikeColour('#28b5b5');
+      console.log('double tap', doubleTapRef);
     }
   };
 
@@ -26,21 +30,26 @@ export default function TapGesture() {
       height: 150,
       backgroundColor: likeColour,
       marginTop: 22,
+      marginBottom: 22,
     },
   });
 
   return (
-    <TapGestureHandler
-      onHandlerStateChange={onSingleTapEvent}
-      waitFor={doubleTapRef}
-    >
+    <>
+      <Text>Double and Single Tap Gesture Handler</Text>
+
       <TapGestureHandler
-        ref={doubleTapRef}
-        onHandlerStateChange={onDoubleTapEvent}
-        numberOfTaps={2}
+        onHandlerStateChange={onSingleTapEvent}
+        waitFor={doubleTapRef}
       >
-        <View style={styles.square} />
+        <TapGestureHandler
+          ref={doubleTapRef}
+          onHandlerStateChange={onDoubleTapEvent}
+          numberOfTaps={2}
+        >
+          <View style={styles.square} />
+        </TapGestureHandler>
       </TapGestureHandler>
-    </TapGestureHandler>
+    </>
   );
 }
