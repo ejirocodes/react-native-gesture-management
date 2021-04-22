@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { PanGestureHandler } from 'react-native-gesture-handler';
-import { Animated, StyleSheet, Text } from 'react-native';
-
+import { Animated, Text } from 'react-native';
+import { styles } from '../styles';
 export default class PanGesture extends Component {
   translateX = new Animated.Value(0);
   translateY = new Animated.Value(0);
@@ -44,12 +44,3 @@ export default class PanGesture extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  square: {
-    width: 150,
-    height: 150,
-    backgroundColor: '#28b5b5',
-    marginTop: 22,
-  },
-});

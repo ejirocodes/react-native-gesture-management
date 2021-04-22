@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import PanGesture from './components/PanGesture';
+import PanGestureHandler from './components/PanGesture';
+import TapGesture from './components/TapGesture';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <PanGesture />
-      {/* <TapGesture /> */}
+      <PanGestureHandler />
+      <TapGesture />
     </View>
   );
 }
