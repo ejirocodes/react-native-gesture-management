@@ -4,6 +4,7 @@ import PanGestureHandler from './components/PanGesture';
 import TapGesture from './components/TapGesture';
 import SwipeGesture from './components/SwipeGesture';
 import LongPressGesture from './components/LongPressGesture';
+import PinchToZoom from './components/PinchToZoom';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       {/* <PanGestureHandler />
       <TapGesture /> */}
       {/* <SwipeGesture /> */}
-      <LongPressGesture />
+      {/* <LongPressGesture /> */}
+      <PinchToZoom />
     </View>
   );
 }
