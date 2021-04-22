@@ -5,6 +5,7 @@ import TapGesture from './components/TapGesture';
 import SwipeGesture from './components/SwipeGesture';
 import LongPressGesture from './components/LongPressGesture';
 import PinchToZoom from './components/PinchToZoom';
+import FlingGesture from './components/FlingGesture';
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       <TapGesture /> */}
       {/* <SwipeGesture /> */}
       {/* <LongPressGesture /> */}
-      <PinchToZoom />
+      {/* <PinchToZoom /> */}
+      <FlingGesture />
     </View>
   );
 }
