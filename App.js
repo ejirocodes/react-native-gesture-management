@@ -6,6 +6,7 @@ import SwipeGesture from './components/SwipeGesture';
 import LongPressGesture from './components/LongPressGesture';
 import PinchToZoom from './components/PinchToZoom';
 import FlingGesture from './components/FlingGesture';
+import PullToRefresh from './components/PullToRefresh';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
       {/* <SwipeGesture /> */}
       {/* <LongPressGesture /> */}
       {/* <PinchToZoom /> */}
-      <FlingGesture />
+      {/* <FlingGesture /> */}
+      <PullToRefresh />
     </View>
   );
 }
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
